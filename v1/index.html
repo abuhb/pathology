@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://abuhb.github.io/ui/nhs-colours.css">
     <script src="https://abuhb.github.io/ui/fontawesome/js/all.js"></script>
 
+<style>
+  .link {
+    cursor: pointer;
+  }
+</style>
+
 </head>
 <body>
    <div class="container-xl">
@@ -15,7 +21,7 @@
 
 <div class="row">
     <div class="col">
-        <h1>Pathology</h1>
+        <h3>Pathology Results</h3>
     </div>
     <div class="col" style="max-width: 200px;">
         <div class="form-check form-switch">
@@ -26,9 +32,10 @@
     </div>
     <div class="container-xl">
     <table class="table table-striped">
-        <thead class="nhsdarkgreen">
+        <thead class="nhsmidgrey">
           <tr>
             <th scope="col">Request Date <i class="fas fa-sort"></i></th>
+            <th scope="col" class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">Source <i class="fas fa-sort"></i></th>
             <th scope="col">Item <i class="fas fa-sort"></i></th>
             <th scope="col">Requestor <i class="fas fa-sort"></i></th>
           </tr>
@@ -36,31 +43,34 @@
         <tbody>
           <tr>
             <th scope="row">24/11/20 10:03</th>
+            <td class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">GUH Pathology</td>
             <td>Full Blood Count</td>
             <td>Dr Sophie Taylor</td>
           </tr>
           <tr>
             <th scope="row">10/11/20 10:57</th>
-            <td>Transferrin saturation (U) <br>
-                Free T3 (U) <br>
-                Free T4 (U) <br>
-                g-glutamyl transferase (U) <br>
-                HCG (U) <br>
-                High Sensitivity Troponin <br>   
-                I 0 Hours (Abbott) (U) <br>     
-                Lactate dehydrogenase (U) <br>
-                Magnesium (U) <br>
-                NT pro BNP (U) <br>
-                Procalcitonin (U) <br>
-                Progesterone (U) <br>
-                PSA (U) <br>
-                Salicylate (U) <br>
-                TSH (U) <br>
+            <td class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">GUH Pathology</td>
+            <td>Transferrin saturation (U),
+                Free T3 (U),
+                Free T4 (U),
+                g-glutamyl transferase (U),
+                HCG (U),
+                High Sensitivity Troponin,  
+                I 0 Hours (Abbott) (U),   
+                Lactate dehydrogenase (U),
+                Magnesium (U),
+                NT pro BNP (U),
+                Procalcitonin (U),
+                Progesterone (U),
+                PSA (U),
+                Salicylate (U),
+                TSH (U),
                 Urate (U)</td>
             <td>Andrew Williams RN</td>
           </tr>
-          <tr>
+          <tr class="link" onclick="document.location='result1.html'">
             <th scope="row">04/11/20 12:05</th>
+            <td class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">GUH Pathology</td>
             <td>Anti-Cardiolipin Ab level (A) <br>
                 Anti-B2-GP1 Antibodies (A) <br>      
                 Anti-B2-GP1 Antibodies (A)</td>
@@ -68,11 +78,16 @@
           </tr>
           <tr>
           <th scope="row">01/03/20 09:38</th>
+          <td class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">GUH Pathology</td>
           <td>Virology - COVID19 antibody (A)</td>
           <td>Dr Sophie Taylor</td>
         </tr>
         </tbody>
-      </table></div>
+        <caption>
+          Showing 4 of 4 results.
+        </caption>
+      </table>
+    </div>
 
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
