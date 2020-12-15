@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWSA- Pathology Results View UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://abuhb.github.io/ui/nhs-colours.css">
+    <script src="https://abuhb.github.io/ui/fontawesome/js/all.js"></script>
+
+</head>
+
+<style>
+    .range {
+        background-color: #C2FFEC !important;
+        width: 100px;
+    }
+
+    .info {
+        background: #FFF9C2;
+        padding: 20px;
+        border-radius: 5pt;
+    }
+
+    .note {
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 5pt;
+    }
+
+    .auth {
+        background: #FFF9C2;
+    }
+
+    .res-info {
+        font-weight: normal !important;
+    }
+
+    .resv {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: end;
+    }
+
+    .rval {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+        padding-right: 12px;
+        background: #000;
+        color: #fff;
+        border-radius: 5pt;
+    }
+
+    .rescol {
+        width: 60px;
+    }
+
+</style>
+<body>
+   <div class="container-xl">
+
+        <p>
+<a class="btn nhsdarkgrey" href="./"><i class="fas fa-arrow-left"></i> Results List</a></p>
+<h3>Pathology Result</h3>
+    <table class="table table-striped">
+        <thead class="nhsblue">
+          <tr>
+            <th scope="col">Request Date</th>
+            <th scope="col">Source</th>
+
+            <th scope="col">Requestor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>24/11/20 10:03</td>
+            <td>RGW Haematology Dept.</td>
+
+            <td>Dr Sophie Taylor</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>&nbsp;</p>
+      
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col" colspan="4">
+<!-- Info Accordian -->
+<div class="accordion" id="acc1">
+    <div class="accordion-item">
+        Anti-Cardiolipin Ab level (A) 
+        <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            <i class="fas fa-info-circle"></i> </button>
+
+      <div id="collapse1" class="info collapse" data-bs-parent="#acc1">
+
+            <span class="res-info">Reference ranges: As of 19 March 2020 the above assay used in this laboratory
+                has changed. There is a new reference range, therefore values are not directly
+                comparable to those obtained from an earlier date. Due to the installation
+                of new equipment this assay is currently unaccredited by UKAS pending application
+                for re-accreditation. However the assay is subject to full internal quality
+                assurance.
+            </span>                                 
+
+      </div>
+    </div>
+</div>
+<!-- Info Accordian -->
+
+</th>
+<th scope="col" class="range">Normal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+            <td class="rescol">IgG</td>
+            <td>IgG Anti-Cardiolipin Antibodies</td>
+            <td class="rescol"><span class="rval"><2.6</span></td>
+            <td class="rescol">GPL U/ml</td>
+            <td class="range">0.0 - 20.0</td>
+          </tr>
+          <tr>
+            <td class="rescol">IgM</td>
+            <td>IgM Anti-Cardiolipin Antibodies</td>
+            <td><span class="rval"><1.0</span></td>
+            <td>MPL U/ml</td>
+            <td class="range">0.0 - 20.0</td>
+          </tr>
+        </tbody>
+      </table>
+<p>&nbsp;</p>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+        <th scope="col" colspan="4">
+        <!-- Info Accordian -->
+        <div class="accordion" id="acc2">
+            <div class="accordion-item">
+                Anti-B2-GP1 Antibodies (A) 
+                <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                    <i class="fas fa-info-circle"></i> </button>
+        
+              <div id="collapse2" class="info collapse" data-bs-parent="#acc2">
+        
+                <span class="res-info">Reference ranges: As of 19 March 2020 the above assay used in this laboratory
+                        has changed. There is a new reference range, therefore values are not directly
+                        comparable to those obtained from an earlier date. Due to the installation
+                        of new equipment this assay is currently unaccredited by UKAS pending application
+                        for re-accreditation. However the assay is subject to full internal quality
+                        assurance.
+                </span>                                 
+        
+              </div>
+            </div>
+        </div>
+        <!-- Info Accordian -->
+        
+        </th>
+        <th scope="col" class="range">Normal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                    <td class="rescol"></td>
+                    <td>IgG Anti-B2-GP1 Antibodies</td>
+                    <td class="rescol"><span class="rval"><6.4</span></td>
+                    <td class="rescol">U/ml</td>
+                    <td class="range">0.0 - 20.0</td>
+                  </tr>
+                  <tr>
+                    <td class="rescol"></td>
+                    <td>IgM Anti-B2-GP1 Antibodies</td>
+                    <td><span class="rval"><1.1</span></td>
+                    <td>U/ml</td>
+                    <td class="range">0.0 - 20.0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>&nbsp;</p>
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                <th scope="col" colspan="4">
+                <!-- Info Accordian -->
+                <div class="accordion" id="acc3">
+                    <div class="accordion-item">
+                        Anti-CCP Antibodies
+                        <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                            <i class="fas fa-info-circle"></i> </button>
+                
+                      <div id="collapse3" class="info collapse" data-bs-parent="#acc3">
+                
+                        <span class="res-info">The current assay is for IgG antibodies to Cyclic Citrullinated Peptide. Antibody tests for Citrullinated Proteins should be used in conjunction with other test results and clinical findings. Reference ranges: As of 09 March 2020 the above assay used in this laboratory has changed. There is a new reference range, therefore values are not directly comparable to those obtained from an earlier date. Due to the installation of new equipment this assay is currently unaccredited by UKAS pending application for re-accreditation. However the assay is subject to full internal quality assurance.
+                        </span>                                 
+                
+                      </div>
+                    </div>
+                </div>
+                <!-- Info Accordian -->
+                
+                </th>
+                <th scope="col" class="range">Normal</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                            <td class="rescol"></td>
+                            <td>Anti-CCP Antibodies</td>
+                            <td class="rescol"><span class="rval"><4.6</span></td>
+                            <td class="rescol">U/ml</td>
+                            <td class="range"><20</td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+
+                      <p>&nbsp;</p>
+
+
+
+
+<div class="note nhspalegrey">
+<h4>Notes</h4>
+<ul>
+  <li>See information per result using yellow button.</li>
+  <li>This report is not a replacement for the official copy supplied by the Pathology Department and must not be filed.</li>
+</ul>                 
+</div>
+
+<div class="note auth">
+<h4>Authorisation</h4>
+<p>Laboratory number: 141039467406<br>
+    Result/Report origin: RGH - Blood Sciences</p>
+    <p>
+        
+Date/Time Collected: 09/03/2020 12:07 <br>
+ Date/Time Received: 09/03/2020 12:17
+
+    </p>
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
