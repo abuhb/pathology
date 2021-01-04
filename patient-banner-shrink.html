@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://abuhb.github.io/ui/nhs-colours.css">
+    <script src="https://abuhb.github.io/ui/fontawesome/js/all.js"></script>
+    <style>
+header {
+        height: 80px;
+        /* margin-bottom: 5px; */
+    }
+
+    main {
+        min-height: Calc(100vh - 247px);
+        padding: 10px;
+    }
+
+    footer {
+        height: 70px;
+        padding: 14px;
+    }
+
+    #quicklinks i {
+        font-size: 1.5rem;
+        padding: 2px;
+        margin-top: 25px;
+        margin-right: 3px;
+        color: #fff;
+    }
+
+    #logo {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .patientbanner {
+        /* background: rgb(250,255,0); */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #000;
+        position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+    }
+
+    #searchbar {
+        display: none;
+    }
+
+    #psh {
+      margin-top: 20px;
+    }
+
+    #psh .input-group {
+      max-width: 250px;
+      margin: auto;
+    }
+
+    #mobsearch {
+      display: none;
+    }
+
+    #ptbardrop {
+      font-size: 0.8rem;
+    }
+
+    .extcol {
+      background: #D6FFE6;
+    }
+
+    #mobalert {
+      display:none;
+    }
+
+    .pt-alert {
+        padding: 5px;
+        background:#fae100;
+        color: #000;
+    }
+
+    .row {
+        margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 750px) {
+        header {
+        height: 60px;
+        margin-bottom: 0px;
+        }
+
+        #logo {
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 5px;
+        }
+
+        #quicklinks i {
+        font-size: 1.3rem;
+        margin-top: 19px;
+        margin-right: 3px;
+        color: #fff;
+        }
+
+        #searchbar {
+            display: block;
+        }
+
+
+        #mobsearch {
+          display: block;
+          padding: 8px;
+        }
+
+        #settings {
+          display:none;
+        }
+    
+
+    main {
+        min-height: Calc(100vh - 293px);
+        padding: 10px;
+    }
+
+    #psh {
+      display: none;
+    }
+
+    .mb-3, .my-3 {
+      margin-bottom: 0px !important;
+    }
+
+    #dtalert {
+      display: none;
+    }
+
+    #mobalert {
+      display:block;
+    }
+
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#extbanner").click(function(){
+          $("#ptbardrop").toggle();
+        });
+      });
+      </script>
+</head>
+<body>
+    <header class="nhsblue">
+
+        <div class="container-xl">
+            <div class="row">
+    
+            <div class="col-4">
+              <a href="/">
+                <img id="logo" src="cwsa-logo.svg">
+            </a>
+            </div>
+            
+            <div id="psh" class="col-4">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="CRN" aria-label="Basic Searcg" aria-describedby="basic-search">
+                  <div class="input-group-append">
+                    <button class="btn nhswarmyellow"><i class="fas fa-caret-right"></i></button>
+                    <button class="btn nhslightgreen" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+            </div>
+            
+            <div id="quicklinks" class="col text-right">                      
+                        <i id="home" class="fas fa-home"></i>          
+                        <i id="watch" class="far fa-eye"></i>
+                        <i id="ward" class="fas fa-bed"></i>
+                        <i id="consultant" class="fas fa-user-md"></i>
+                        <i id="settings" class="fas fa-cog"></i></li>
+                        <i id="signout" class="fas fa-sign-out-alt"></i>
+                    </ul>
+            </div>
+    
+        </div>
+        </div>
+    
+    </header>  
+    
+    <!-- Mobile Search -->
+    <div id="mobsearch" class="nhsdarkgrey">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="CRN" aria-label="Basic Search" aria-describedby="basic-search">
+          <div class="input-group-append">
+            <button class="btn nhswarmyellow"><i class="fas fa-caret-right"></i></button>
+            <button class="btn nhslightgreen" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+    </div>
+    
+    <!-- Patient Search Modal -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Patient Search</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <h5>Go to Patient</h5>
+              <p>If you know the CRN we can take you directly to the patient record.</p>
+              
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="CRN" aria-label="Basic Searcg" aria-describedby="basic-search">
+                <div class="input-group-append">
+                  <button class="btn nhsgreen">Go to Patient</button>
+                </div>
+              </div>
+    <br>
+              <hr> -->
+              <!-- <h5>Advanced Search</h5> -->
+              
+              <form>
+                <div class="form-group row">
+                  <label for="forename" class="col-sm-2 col-form-label">Forename</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="forename">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="surname" class="col-sm-2 col-form-label">Surname</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="surname">
+                  </div>
+                </div>
+    
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender1" value="f" checked>
+                    <label class="form-check-label" for="gender1">
+                      Female
+                    </label><br>
+                    <input class="form-check-input" type="radio" name="gender" id="gender2" value="m">
+                    <label class="form-check-label" for="gender2">
+                      Male
+                    </label><br>
+                    <input class="form-check-input" type="radio" name="gender" id="gender3" value="u">
+                    <label class="form-check-label" for="gender3">
+                      Unknown
+                    </label>
+                  </div>
+                  <br>
+    
+                  <button class="btn btn-block nhsdarkgreen">Search</button>
+    
+    
+              </form>
+    
+    
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- End Patient Search Modal-->
+    
+    
+    <a id="extbanner" href="#" style="text-decoration : none">
+    <div class="nhsgreen patientbanner position-sticky">
+            <div class="container-xl">
+                <div class="row">
+<div class="col-4">
+    <h4>Stevens, Jacqueline (Mrs) <i class="fas fa-exclamation-triangle"></i></h4>
+</div>
+<div class="col-3">CRN: 1234 5678<br>
+    NHS: 1234 567 890
+</div>
+<div class="col-3">09-Feb-1985 (35y)<br>
+    Gender: Female
+</div>
+<div class="col-2">icons</div>
+            </div>
+
+                    <span class="pt-alert"><i class="fas fa-exclamation-triangle"></i> Can take video calls</span>
+                    <span class="pt-alert"><i class="fas fa-exclamation-triangle"></i> Patient on anticoagulants</span>
+
+            </div>
+        </div>
+        
+
+            </div>
+    <!-- Dropdown -->
+    <div id="ptbardrop" class="patientbanner extcol" style="display:none;">
+      <div class="container-xl">
+        <div id="mobalert" class="alert nhsred">
+        <span style="font-size: 1.1rem;"><i class="fas fa-exclamation-triangle"></i> Patient is allergic to Penecillin.</span>
+      </div>
+
+<div class="row">
+
+    <div class="col-3">
+
+        <h6>Address</h6>
+        <p>1 Straight Lane<br>
+        Someplace<br>
+        Somewhere<br>
+        Anywhere<br>
+        AT1 6TY
+      </p>
+    
+    </div>
+
+    <div class="col-3">
+        <h6>Phone</h6>
+        <p>
+      Home: 0123 434 7193<br>
+      Mobile: 0759 212 2231<br>
+      Email: j.stevens29@example.com<br>
+      Work: 02352 957 7563
+      
+        </p>
+    </div>
+
+    <div class="col-3">
+        <h6>Next of Kin</h6>  
+        <p>Name: Stevens, Jim<br>
+        Address: 4 Round Avenue<br>
+        Littlewood<br>
+        Somewhere<br>
+        Anywhere<br>
+        DT3 5QW<br>
+        Tel: 014 525 6622</p>
+        <p>
+    </div>
+
+    <div class="col-3">
+        <h6>GP</h6>
+        8 Round Avenue<br>
+        Littlewood<br>
+        Somewhere<br>
+        Anywhere<br>
+        DT3 5TT<br>
+        Tel: 0314 525 6622
+        <p>
+    </div>
+
+</div>
+
+
+
+      
+    
+      </div>
+    </div>
+    
+    </div>
+    
+    </a>
+    <!-- Dropdown -->
+    
+    <!-- New Nav -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pathology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Radiology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Referrals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Letters</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- New Nav -->
+    
+    <main class="container-xl">
+<h1>Demo</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+    </main>
+    
+    <footer class="nhsblack">
+        <div class="container-xl">
+            Made in Wales <i class="fas fa-dragon" style="color:red;"></i> by Aneurin Bevan University Health Board.
+    </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</body>
+</html>

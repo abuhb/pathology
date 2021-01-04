@@ -77,6 +77,7 @@
         .range {
             background-color: #C2FFEC !important;
             width: 100px;
+            display: none;
         }
     
         .info {
@@ -105,7 +106,7 @@
             text-align: end;
         }
     
-        .rval {
+        /* .rval {
             padding-top: 7px;
             padding-bottom: 7px;
             padding-left: 12px;
@@ -113,7 +114,7 @@
             background: #000;
             color: #fff;
             border-radius: 5pt;
-        }
+        } */
     
         .rescol {
             width: 60px;
@@ -140,13 +141,35 @@
     #mobnav {
             display: block;
             padding: 15px;
-            background: lawngreen;
         }
     
         }
     </style>
 </head>
 <body>
+
+  <!-- Mobile Navigation -->
+
+  <div id="mobnav" class="fixed-bottom nhspalegrey">
+    <div class="row">
+
+      <div class="col">
+<a href="#" class="btn nhsblack"><i class="fas fa-chevron-left"></i></a>
+      </div>
+
+      <div class="col text-center">
+<a href="list.html" class="btn nhsblack">Back to list</a>
+      </div>
+
+      <div class="col text-end">
+<a href="#" class="btn nhsblack"><i class="fas fa-chevron-right"></i></a>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <!-- /mob Nav -->
 <div class="container-xl">
 
     <div id="abp-con">
@@ -273,7 +296,6 @@
     </div>
 </div></div>
 <div id="detail">
-    <div id="mobnav">Mobile Navigation</div>
 
 <h3>Pathology Result</h3>
     <table class="table table-striped">
@@ -305,7 +327,7 @@
 <div class="accordion" id="acc1">
     <div class="accordion-item">
         Anti-Cardiolipin Ab level (A) 
-        <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+        <button class="btn nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
             <i class="fas fa-info-circle"></i> </button>
 
       <div id="collapse1" class="info collapse" data-bs-parent="#acc1">
@@ -354,7 +376,7 @@
         <div class="accordion" id="acc2">
             <div class="accordion-item">
                 Anti-B2-GP1 Antibodies (A) 
-                <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                <button class="btn nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
                     <i class="fas fa-info-circle"></i> </button>
         
               <div id="collapse2" class="info collapse" data-bs-parent="#acc2">
@@ -403,7 +425,7 @@
                 <div class="accordion" id="acc3">
                     <div class="accordion-item">
                         Anti-CCP Antibodies
-                        <button class="btn btn-sm nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                        <button class="btn nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
                             <i class="fas fa-info-circle"></i> </button>
                 
                       <div id="collapse3" class="info collapse" data-bs-parent="#acc3">
@@ -435,31 +457,46 @@
                       <p>&nbsp;</p>
 
 
+<!-- New stuff -->
 
-
-<div class="note nhspalegrey">
-<h4>Notes</h4>
-<ul>
-  <li>See information per result using yellow button.</li>
-  <li>This report is not a replacement for the official copy supplied by the Pathology Department and must not be filed.</li>
-</ul>                 
+<div class="accordion accordion-flush" id="notesandauth">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed nhsmidgrey" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Notes
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#notesandauth">
+      <div class="note">
+        <ul>
+          <li>See information per result using yellow button.</li>
+          <li>This report is not a replacement for the official copy supplied by the Pathology Department and must not be filed.</li>
+        </ul>       </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed nhsyellow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Authorisation
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#notesandauth">
+      <div class="note">
+        <p>Laboratory number: 141039467406<br>
+          Result/Report origin: RGH - Blood Sciences</p>
+          <p>
+              
+      Date/Time Collected: 09/03/2020 12:07 <br>
+       Date/Time Received: 09/03/2020 12:17
+      
+          </p>      </div>
+    </div>
+  </div>
 </div>
 
-<div class="note auth">
-<h4>Authorisation</h4>
-<p>Laboratory number: 141039467406<br>
-    Result/Report origin: RGH - Blood Sciences</p>
-    <p>
-        
-Date/Time Collected: 09/03/2020 12:07 <br>
- Date/Time Received: 09/03/2020 12:17
-
-    </p>
-
-
-
-</div>
-
+<!-- / New Stuff -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </div>
     
     </div>
